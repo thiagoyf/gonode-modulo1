@@ -15,6 +15,9 @@ nunjucks.configure("views", {
   watch: true
 });
 
+// para o express saber lidar com um formulário HTML
+app.use(express.urlencoded({ extended: false }));
+
 // Setar configurações globais
 app.set("view engine", "njk");
 
@@ -28,6 +31,12 @@ app.get("/", (req, res) => {
 
 app.get("/new", (req, res) => {
   return res.render("new");
+});
+
+// o post é o metodo que a rota está ouvindo.
+app.post("/create", (req, res) => {
+  users.push(req.body.user);
+  return res.redirect("/");
 });
 
 app.listen(3000);
