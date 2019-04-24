@@ -1,0 +1,12 @@
+# Arquivo inicial do editor config e o arquivo global do editor config
+# pode ter mais arquivos por pastas, mas esse vai agir como principal
+root = true
+
+# [*] esses valores apartir de agora vai valer para todos tipos de arquivos
+# mas poderia ser [*.{js,py}]
+[*]
+indent_style = space
+indent_size = 2
+charset = utf-8
+trim_trailing_whitespace = true
+insert_final_newline = true
