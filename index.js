@@ -18,9 +18,16 @@ nunjucks.configure("views", {
 // Setar configurações globais
 app.set("view engine", "njk");
 
+const users = ["Diego Fernandes", "Robson Marques", "Cleison Souza"];
+
 app.get("/", (req, res) => {
   // primeiro parametro seria o nome do template sem a extensão
-  return res.render("list", { name: "Thiago" });
+  // o segundo seria o nome da variável que está passando para o template
+  return res.render("list", { users });
+});
+
+app.get("/new", (req, res) => {
+  return res.render("new");
 });
 
 app.listen(3000);
